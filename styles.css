@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Manrope:wght@400;800&family=Open+Sans&family=Overpass:wght@400;700&family=Red+Hat+Text:wght@700&family=Roboto:ital,wght@0,400;0,700;1,500&family=Space+Mono:wght@400;700&display=swap");
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fontSize: 13px;
+  /* primary */
+  --moderateViolet: hsl(263, 55%, 52%);
+  --veryDarkGrayishBlue: hsl(217, 19%, 35%);
+  --veryDarkBlackishBlue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  /* neutral */
+  --LightGray: hsl(0, 0%, 81%);
+  --lightGrayishBlue: hsl(210, 46%, 95%);
+  --fontFamily: "Barlow Semi Condensed", sans-serif;
+}
+img {
+  display: block;
+  object-fit: cover;
+}
+.section-center {
+  max-width: 1440px;
+  width: 80vw;
+  margin: 0 auto;
+  padding: 4rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.person {
+  background: var(--moderateViolet);
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  position: relative;
+  color: var(--white);
+  font-family: var(--fontFamily);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.person:hover {
+  transform: scale(1.02);
+}
+.person:first-child .person-img {
+    border: 2px solid violet;
+}
+.person:nth-child(2) {
+  background: var(--veryDarkGrayishBlue);
+}
+.person:nth-child(3), .person:nth-child(5) {
+  background: var(--white);
+  color: rgba(0, 0, 0, 0.7);
+}
+.person:nth-child(3) h4,.person:nth-child(5) h4 {
+  color: rgba(0, 0, 0, 0.7);
+}
+.person:nth-child(3) h5, .person:nth-child(5) h5 {
+  color: rgba(0, 0, 0, 0.5);
+}
+.person:nth-child(3) .person-review, .person:nth-child(5) .person-review {
+  color: rgba(0, 0, 0, 0.5);
+}
+.person:nth-child(4) {
+  background: var(--veryDarkBlackishBlue);
+}
+
+.quotation {
+  position: absolute;
+  right: 1rem;
+  top: 0;
+}
+.person-header {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+.person-img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+.person-info {
+  padding-left: 1rem;
+}
+.person-info h4 {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+.person-info h5 {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+.person-experience {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.person-review {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+@media screen and (min-width: 1440px) {
+  .section-center {
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    padding: 0;
+    padding-top: 2rem;
+  }
+  .person:first-child {
+    grid-column: span 2;
+    order: 1;
+  }
+  .person:nth-child(2) {  
+    order: 2;
+  }
+  .person:nth-child(3) {
+    order: 4;
+  }
+  .person:nth-child(4) {
+    order: 5;
+    grid-column: span 2;
+  }
+  .person:last-child {
+    grid-row: span 2;
+    order: 3;
+  }
+  
+}
